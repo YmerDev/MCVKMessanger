@@ -36,6 +36,11 @@ public class VKCommand implements Command {
             return true;
         }
 
+        if (args.length < 1) {
+            this.sendDefault();
+            return true;
+        }
+
         switch (args[0]) {
             case "auth": {
                 if (Token.token != null) {
@@ -110,20 +115,21 @@ public class VKCommand implements Command {
             }
             break;
             default: {
-                if (Token.token == null)
-                    return true;
-
-                String me = VK.getMe();
-
-                VKAddon.sendLocalChat(VKAddon.bar);
-                VKAddon.sendLocalChat(VKAddon.info + "Добро пожаловать, " + me + "!");
-                VKAddon.sendLocalChat(VKAddon.info + "Используйте /vk friends, чтобы получить список друзей;");
-                VKAddon.sendLocalChat(VKAddon.info + "Используйте /vk dialogs, чтобы получить список диалогов;");
-                VKAddon.sendLocalChat(VKAddon.info + "Используйте /m, чтобы отправить сообщение;");
-                VKAddon.sendLocalChat(VKAddon.info + "Используйте /vk silent, чтобы отключить получение новых сообщений;");
+                this.sendDefault();
             }
             break;
         }
         return true;
+    }
+
+    private void sendDefault () {
+        String me = VK.getMe();
+
+        VKAddon.sendLocalChat(VKAddon.bar);
+        VKAddon.sendLocalChat(VKAddon.info + "Добро пожаловать, " + me + "!");
+//        VKAddon.sendLocalChat(VKAddon.info + "Используйте /vk friends, чтобы получить список друзей;");
+//        VKAddon.sendLocalChat(VKAddon.info + "Используйте /vk dialogs, чтобы получить список диалогов;");
+        VKAddon.sendLocalChat(VKAddon.info + "Используйте /m, чтобы отправить сообщение;");
+        VKAddon.sendLocalChat(VKAddon.info + "Используйте /vk silent, чтобы отключить получение новых сообщений;");
     }
 }

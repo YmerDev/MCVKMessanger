@@ -44,5 +44,9 @@ public class MessageHandler {
         } else {
             VKAddon.sendLocalChat(VKAddon.info + "§d#" + easySendId + " §8| §3" + VK.getUserName(msg.from_id) + " §a» §3Вы§f: " + msg.text);
         }
+
+        // TODO: display notification when the message contains attachments.
+//        if (containsMedia)
+//            VKAddon.sendLocalChat(VKAddon.info + "§7[Сообщение содержит одно или несколько прикреплений]");
     }
 }

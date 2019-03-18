@@ -64,7 +64,7 @@ public class VKMessage implements Command {
                     VKAddon.sendLocalChat(VKAddon.error + errorObject.getString("error_msg"));
                 } else {
                     String peerName = VK.getUserName(pId);
-                    VKAddon.sendLocalChat("§3Вы §a» §3" + peerName + "§f: " + message);
+                    VKAddon.sendLocalChat(VKAddon.info + "§3Вы §a» §3" + peerName + "§f: " + message);
                 }
 
             } catch (JSONException ignored) {}
