@@ -1,0 +1,9 @@
+{
+  "uuid": "%uuid%",
+  "name": "VK Messenger",
+  "mainClass": "dev.ymer.addons.vk.VKAddon",
+  "description": "Chat with your friends from biggest russian social network inside the game!",
+  "author": "HuggingYmer (ymer.dev)",
+  "category": 2,
+  "icon": "https://brand.vkforms.ru/static/media/logo_color_198.231228dd.svg"
+}
